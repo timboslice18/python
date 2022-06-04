@@ -3,14 +3,15 @@ import json
 
 
 url = "https://172.17.71.202/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/policy/accesspolicies"
-
+x_auth_access_token = 'xxxxx'
+x_auth_refresh_token = 'xxxxxx'
 
 username = "apiUser"
 password = "APIPassword123"
 payload  = {}
 headers = {
-  'X-auth-access-token': 'dbcfe1a9-9aa8-429d-8ecb-d626a569235a',
-  'X-auth-refresh-token': '989cbae3-e54c-4e32-9372-f8db5d7bbe57',
+  'X-auth-access-token': x_auth_access_token,
+  'X-auth-refresh-token': x_auth_refresh_token,
   'Content-Type': 'application/json',
   'Authorization': 'Basic YXBpVXNlcjpBUElQYXNzd29yZDEyMw=='
 }
@@ -32,26 +33,3 @@ for item in json_items:
   if item["name"] == "test":
     print(item["name"])
     print(item["id"])
-
-
-
-
-
-#print(json_items_formatted_str)
-#print(json_items)
-#print(type(json_items))
-
-#it = iter(json_items)
-#res_dct = dict(zip(it, it))
-#print(type(res_dct))
-
-
-"""
-for key in json_data:
-  for inner_dict in key["items"]:
-    print(inner_dict)
-
-
-for d in json_data['items']:
-"""
-
