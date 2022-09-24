@@ -15,11 +15,9 @@ class Snake:
         self.create_snake()
         self.head = self.segments[0]
 
-
     def create_snake(self):
         for position in STARTING_POSITIONS:
             self.add_segment(position)
-
 
     def add_segment(self, position):
         new_segment = Turtle(shape="square")
@@ -28,10 +26,18 @@ class Snake:
         new_segment.goto(position)
         self.segments.append(new_segment)
 
+    def reset(self):
+        #Make the snake dissapear from the screen if you die
+        for seg in self.segments:
+            seg.goto(1000, 1000)
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
+
     def extend(self):
         #grab the last item of segments list with index of -1
         self.add_segment(self.segments[-1].position())
-
+        self.head = self.segments[0]
 
     def move(self):
         # next line is duplicated because you cant use keyword arguments in range(). This is just here to show what the values are
