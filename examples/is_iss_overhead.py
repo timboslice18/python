@@ -5,10 +5,11 @@ import time
 import os
 
 
+#Change following vars with your input
 MY_EMAIL = "emailt@gmail.com"
 MY_PASSWORD = os.environ.get("GMAIL_PWD")
-MY_LAT = 40.440624
-MY_LNG = -79.995888
+MY_LAT = "lat_value"
+MY_LNG = "long_value"
 
 def is_iss_overhead():
     response = requests.get(url="http://api.open-notify.org/iss-now.json")
